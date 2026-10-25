@@ -1,0 +1,20 @@
+Why is a tree appropriate for the doctor structure?
+
+A tree is useful since it represents the hierarchical structure of the doctors. 
+It makes it easy to represent who is above or below who in the corporate hierarchy.
+It also makes it more obvious who someone answers to if that information is necessary.
+In general, it is one of the closest representations to the actual structure of the doctors.
+
+
+When might a software engineer use preorder, inorder, or postorder traversals?
+
+Preorder is useful for copying a tree or any operation where the root significantly impacts the operation.
+Inorder is useful for sorted data due to how it traverses the tree, resulting in sorted output.
+Postorder is useful in opposite cases to preorder, where the leaves greatly impact the result.
+
+
+How do heaps help simulate real-time systems like emergency intake?
+
+The automatic reordering of a heap represents how these systems will constantly shift to ensure the most important information is first.
+This is useful for real-time systems such as the emergency intake in this assignment, but also when prioritizing tasks in any organization.
+Heaps simulate these systems well when the things involved have different priorities that need to be accounted for.

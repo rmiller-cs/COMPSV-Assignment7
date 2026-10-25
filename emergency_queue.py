@@ -10,11 +10,11 @@ class MinHeap:
     def print_heap(self):
         print("\nCurrent Patients")
         for patient in self.data:
-            print(f"- {patient.name} (Priority: {patient.urgency})")
+            print(f"- {patient.name} (Urgency: {patient.urgency})")
 
     def peek(self):
         patient = self.data[0]
-        print(f"{patient.name} (Priority: {patient.urgency})")
+        print(f"{patient.name} (Urgency: {patient.urgency})")
 
     def heapify_up(self, index):
         while index > 0:
@@ -39,10 +39,10 @@ class MinHeap:
         right = 2 * index + 2
         smallest = index
 
-        if left < len(self.data) and self.data[left].priority < self.data[smallest].priority:
+        if left < len(self.data) and self.data[left].urgency < self.data[smallest].urgency:
             smallest = left
 
-        if right < len(self.data) and self.data[right].priority < self.data[smallest].priority:
+        if right < len(self.data) and self.data[right].urgency < self.data[smallest].urgency:
             smallest = right
 
         if smallest != index:
@@ -62,3 +62,19 @@ class MinHeap:
         self.data[0] = self.data.pop()
         self.heapify_down(0)
         return min_value
+
+heap = MinHeap()
+heap.insert(Patient("A", 3))
+heap.insert(Patient("B", 1))
+heap.insert(Patient("C", 5))
+heap.print_heap()
+
+heap.remove_min()
+heap.print_heap()
+
+heap.insert(Patient("D", 1))
+heap.print_heap()
+
+heap.insert(Patient("E", 4))
+heap.insert(Patient("F", 2))
+heap.print_heap()
